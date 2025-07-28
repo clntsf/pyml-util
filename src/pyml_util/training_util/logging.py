@@ -8,12 +8,12 @@ def log_training(logfile_path: str|Path):
 
     def decorator(func):
         def wrapper(*args, **kwargs):
-            init_time = perf_counter()
-
-            func(*args, **kwargs)
-
-            end_time = perf_counter()
             timestamp = datetime.strftime(datetime.now(), "%Y/%m/%d-%H:%M:%S:%f")
+            
+            init_time = perf_counter()
+            func(*args, **kwargs)
+            end_time = perf_counter()
+
             args = (func.__name__, timestamp, (end_time-init_time)*1000)
 
             if not outpath_abs.exists():
