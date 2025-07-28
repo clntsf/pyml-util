@@ -1,0 +1,15 @@
+# junk
+/.DS_Store
+
+# tests dir
+tests
+
+# test files
+*test.py
+
+# python build artifacts
+__pycache__
+*.pyc
+
+# package build artifacts
+*.egg-info
